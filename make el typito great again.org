@@ -1,0 +1,26 @@
+* Todo
+
+In rough order of importance
+
+** Animate ascii art figure dancing in celebration once exercise is completed
+** Copy buffer contents to new buffer
+** Make buffer write only
+** Display stats at the end of the buffer when exercise is complete
+
+I'm thinking we can add some text at the end of the buffer showing
+characters per second, errors.
+
+** Collect timing stats
+** Disable movement in the buffer
+
+Sounds tricky - I don't know if there is some kind of advice for
+movement.
+
+** Display menu once exercise is complete
+
+Containing at least quit and restart.
+
+** Create collections of code to train on
+** Make awesome logo, ideally involving octopodes and platypodes
+** Comment the code
+** Should this be a major mode? I wasn't sure.
