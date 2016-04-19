@@ -25,12 +25,14 @@
 
 (defun el-typito-start ()
   (interactive)
-  (setq el-typito--thing-to-type
-	(string-to-list
-	 (buffer-substring-no-properties (point-min) (point-max))))
-  (set-text-properties (point-min) (point-max) '(face el-typito-pending-face))
+  (let ((original-content (buffer-substring-no-properties (point-min) (point-max)))
+	(buffer (generate-new-buffer (generate-new-buffer-name "el-typito"))))
+    (setq el-typito--thing-to-type (string-to-list original-content))
+    (switch-to-buffer buffer)
+    (insert original-content)
+    (set-text-properties (point-min) (point-max) '(face el-typito-pending-face))
+    (goto-char (point-min)))
   (setq el-typito--errors 0)
-  (goto-char (point-min))
   (message "Type what you see")
   (add-hook 'post-self-insert-hook 'el-typito-check-char nil t))
 
