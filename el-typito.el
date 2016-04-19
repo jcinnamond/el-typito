@@ -8,10 +8,15 @@
   "Face for characters mistyped"
   :group :el-typito)
 
+(defun el-typito--last-input-eq (char)
+  (if (eq 'return last-input-event)
+      (char-equal char ?\n)
+    (char-equal char last-input-event)))
+
 (defun el-typito-check-char ()
   (interactive)
   (delete-backward-char 1)
-  (if (char-equal (car el-typito--thing-to-type) last-input-event)
+  (if (el-typito--last-input-eq (car el-typito--thing-to-type))
       (progn
 	(set-text-properties (point) (+ 1 (point)) nil)
 	(forward-char)

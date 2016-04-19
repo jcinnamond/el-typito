@@ -5,7 +5,10 @@ In rough order of importance
 ** Animate ascii art figure dancing in celebration once exercise is completed
 ** DONE Copy buffer contents to new buffer
    CLOSED: [2016-04-19 Tue 19:25]
-** Handle newlines
+** TODO Handle newlines
+This works if return is typed in the correct place. Otherwise it
+deletes the wrong character and then moves to the beginning of the
+line :-(
 ** Make buffer write only
 ** Display stats at the end of the buffer when exercise is complete
 
